@@ -1,14 +1,7 @@
-import React from "react"
-import { useState } from 'react';
 
-function Header(){
-    const [myStyle, setMyStyle] = useState({
-        color: "green",
-        fontSize: 18+"px"
-        })
-        const [myLikes, setMyLikes] = useState({
-            likes: 0
-          })
+
+function Header({myStyle, myLikes}){
+    
 
     return (<div className="header">
     <h1>Nagłówek</h1><p>Aktualny rozmiar czcionki: <strong>{myStyle.color}</strong></p>
