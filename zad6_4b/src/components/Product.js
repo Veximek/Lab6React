@@ -1,6 +1,7 @@
-import { LuMilk } from "react-icons/lu";
 import {FiX} from "react-icons/fi";
 import {useState} from "react"
+import { GiMilkCarton, GiSlicedBread, GiShinyApple } from 'react-icons/gi'
+
 const Product = ({ product, onDelete }) => {
     const [zakupione,setZakupione] = useState(false)
     const textStyle = {
@@ -11,7 +12,10 @@ const Product = ({ product, onDelete }) => {
     <div className='product'>
     <div className='product-info'>
     <div className='input-name'>
-    <LuMilk />
+    {product.category === "diary" && <GiMilkCarton className='category'></GiMilkCarton> }
+    {product.category === "bread" && <GiSlicedBread className='category'></GiSlicedBread> }
+    {product.category === "fruits&vegetables" && <GiShinyApple className='category'></GiShinyApple> }
+
     <input type='checkbox' value="" required onChange={e => setZakupione(e.target.checked)} />
     </div>
     {!zakupione ? <p>{product.name}</p> : <p style={textStyle}>{product.name}</p>}
